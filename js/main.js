@@ -55,16 +55,30 @@ createApp({
       let total = 0;
 
       lines.forEach((line) => {
-        // حذف أي رقم مرتبط بوحدة (2 كيلو / 2kg / 2 kg)
-        this.ignoreWords.forEach((word) => {
-          const regex = new RegExp(`\\d+\\s*${word}`, "gi");
-          line = line.replace(regex, "");
-        });
+        const words = line.split(/\s+/);
 
-        // استخراج باقي الأرقام
-        const matches = line.match(/\d+/g);
+        // نحدد الكلمات اللي تعتبر وحدات
+        const unitWords = this.ignoreWords;
+
+        for (let i = 0; i < words.length; i++) {
+          if (unitWords.includes(words[i])) {
+            // نحذف الرقم اللي قبلها فقط (بدون التأثير على باقي السطر)
+            if (i > 0 && /^\d+$/.test(words[i - 1])) {
+              words[i - 1] = "";
+            }
+          }
+        }
+
+        // إعادة بناء السطر
+        const cleanedLine = words.join(" ");
+
+        // استخراج كل الأرقام المتبقية في السطر
+        const matches = cleanedLine.match(/\d+/g);
+
         if (matches) {
-          matches.forEach((n) => (total += Number(n)));
+          matches.forEach((n) => {
+            total += Number(n);
+          });
         }
       });
 
