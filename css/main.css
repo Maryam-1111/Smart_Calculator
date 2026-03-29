@@ -22,12 +22,12 @@ body {
   }
 }
 textarea {
-  /* width: 100%; */
+  width: 95%;
   height: 130px;
   padding: 10px;
   font-size: 16px;
   resize: none;
-  width: 440px;
+  /* width: 440px; */
   border-radius: 5px;
 }
 
