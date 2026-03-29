@@ -1,0 +1,63 @@
+body {
+  font-family: Arial;
+  background: #f5f5f5;
+  text-align: center;
+  direction: rtl;
+}
+
+#app {
+  width: 95%;
+  max-width: 500px;
+  margin: 20px auto;
+  background: white;
+  padding: 15px;
+  border-radius: 10px;
+}
+@media (max-width: 767px) {
+  #app {
+    padding: 10px;
+  }
+  button {
+    font-size: 14px;
+  }
+}
+textarea {
+  /* width: 100%; */
+  height: 130px;
+  padding: 10px;
+  font-size: 16px;
+  resize: none;
+  width: 440px;
+  border-radius: 5px;
+}
+
+.buttons button {
+  margin: 5px;
+  padding: 12px;
+  font-size: 16px;
+  width: 45%;
+  cursor: pointer;
+  border-radius: 5px;
+  box-shadow: inset 1px 1px 10px 2px #bfbfbf;
+      border-radius: 5px;
+    box-shadow: inset 1px 1px 10px 2px #bfbfbf;
+    border: 1px solid black;
+}
+
+video {
+  width: 100%;
+  margin-top: 10px;
+  border-radius: 10px;
+}
+
+.result {
+  margin-top: 20px;
+  font-size: 24px;
+  color: green;
+  font-weight: bold;
+}
+
+.loading {
+  color: red;
+  margin-top: 10px;
+}

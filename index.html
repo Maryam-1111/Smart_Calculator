@@ -1,0 +1,39 @@
+<!doctype html>
+<html lang="ar">
+  <head>
+    <meta charset="UTF-8" />
+    <title>حسابات البقالة</title>
+    <link rel="stylesheet" href="css/main.css" />
+  </head>
+  <body>
+    <div id="app">
+      <h1>🧮 حسابات البقالة</h1>
+
+      <textarea
+        v-model="text"
+        placeholder="اكتب أو الصق الحسابات هنا..."
+      ></textarea>
+
+      <div class="buttons">
+        <button @click="pasteText">📋 لصق</button>
+        <button @click="startCamera">📷 فتح الكاميرا</button>
+        <button @click="captureImage" v-if="showCamera">📸 التقط الصورة</button>
+        <button @click="calculate">احسب</button>
+        <button @click="clearAll">مسح</button>
+      </div>
+
+      <video ref="video" autoplay v-show="showCamera"></video>
+      <canvas ref="canvas" style="display: none"></canvas>
+
+      <div class="loading" v-if="loading">جاري قراءة الصورة...</div>
+
+      <div class="result" v-if="result !== null">
+        المجموع: {{ resultArabic }}
+      </div>
+    </div>
+
+    <script src="https://unpkg.com/vue@3"></script>
+    <script src="https://cdn.jsdelivr.net/npm/tesseract.js@4/dist/tesseract.min.js"></script>
+    <script src="js/main.js"></script>
+  </body>
+</html>
