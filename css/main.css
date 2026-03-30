@@ -22,7 +22,7 @@ body {
   }
 }
 textarea {
-  width: 95%;
+  width: 87%;
   height: 130px;
   padding: 10px;
   font-size: 16px;
@@ -38,10 +38,9 @@ textarea {
   width: 45%;
   cursor: pointer;
   border-radius: 5px;
-  box-shadow: inset 1px 1px 10px 2px #bfbfbf;
-      border-radius: 5px;
-    box-shadow: inset 1px 1px 10px 2px #bfbfbf;
-    border: 1px solid black;
+  box-shadow: inset 1px 1px 3px 1px #bfbfbf;
+  border: 1px solid #ccc;
+  background-color: #f5f6f8;
 }
 
 video {
